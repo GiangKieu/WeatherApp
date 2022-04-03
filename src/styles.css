@@ -1,0 +1,70 @@
+
+.container{
+    display: block;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid rgb(143, 196, 209);
+    border-radius: 20px;
+    max-width: 600px;
+}
+
+#search {
+    padding: 4px;
+}
+.submitcity {
+    text-align: center;
+    margin: 40px;
+}
+.submitcity .active {
+    color:rgb(143, 196, 209);
+    cursor: default;
+}
+#cityname {
+    color: rgb(0, 174, 255);
+    font-size: 30px;
+    font-weight: bolder;
+    line-height: 20px;
+}
+#time{
+    color: rgb(143, 196, 209);
+    font-size: 20px;
+    line-height: 30px;
+}
+#currenttemperature {
+    color: rgb(0, 174, 255);
+    font-size: 25px;
+    line-height: 20px;
+    text-decoration: none;
+}
+#description {
+    color: rgb(143, 196, 209)   ;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+span #celsius {
+    color: rgb(0, 174, 255);;
+    font-size: 25px;
+    text-decoration: none;   
+}
+span #fahrenheit {
+    color: rgb(0, 174, 255);
+    font-size: 25px;
+    text-decoration: none;
+}
+#more-info {
+    color: rgb(143, 196, 209); 
+    font-size: 20px;
+}
+.info {
+    color: rgb(0, 174, 255);
+}
+.source {
+    text-align: center;
+    font-size: 14px;
+}
+.open-source {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
