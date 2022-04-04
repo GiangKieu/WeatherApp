@@ -5,7 +5,7 @@
     padding: 20px;
     border: 1px solid rgb(143, 196, 209);
     border-radius: 20px;
-    max-width: 600px;
+    width: 60%;
 }
 
 #search {
@@ -67,4 +67,18 @@ span #fahrenheit {
 }
 ul {
     list-style: none;
+}
+.weather-forcast {
+    text-align: center;
+    margin-top: 10px;
+}
+.weather-forcast-date {
+    font-size: 16px;
+    color: rgb(0, 174, 255);
+}
+.weather-forcast-temp .min {
+    color:rgb(0, 174, 255);
+}
+.weather-forcast-temp .max {
+   color: rgb(143, 196, 209)
 }
