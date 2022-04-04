@@ -72,13 +72,13 @@ ul {
     text-align: center;
     margin-top: 10px;
 }
-.weather-forcast-date {
+.weather-forecast-date {
     font-size: 16px;
     color: rgb(0, 174, 255);
 }
-.weather-forcast-temp .min {
+.weather-forecast-temp .min {
     color:rgb(0, 174, 255);
 }
-.weather-forcast-temp .max {
+.weather-forecast-temp .max {
    color: rgb(143, 196, 209)
 }

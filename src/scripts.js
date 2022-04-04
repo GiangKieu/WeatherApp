@@ -61,6 +61,26 @@ function displayCelsiusTemperature (event) {
     let temperatureElement = document.querySelector("#currenttemperature");
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+function displayForecast() {
+    let forecastElement = document.querySelector ("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+    days.forEach(function(day){
+        forecastHTML = forecastHTML +
+                `<div class="col-2">
+                    <div class="weather-forecast-date"> ${day}
+                    </div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" id="icon" width="80"/>
+                    <div class="weather-forecast-temp">
+                    <span class= "min">12</span> 
+                    <span class="max">18</span>
+                    </div>
+                </div>`
+    })
+    forecastHTML= forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML; 
+}
+
 let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -70,3 +90,4 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("London");
+displayForecast();
