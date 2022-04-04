@@ -22,7 +22,7 @@ function displayTemperature(response){
     let windspeedElement = document.querySelector(".windspeed");
     let dateElement = document.querySelector("#time");
     let iconElement = document.querySelector("#icon");
-    let celsiusTemperature = response.data.main.temp;
+    celsiusTemperature = response.data.main.temp;
     temperatureElement.innerHTML=Math.round(celsiusTemperature);
     cityElement.innerHTML= response.data.name;
     descriptionElement.innerHTML= response.data.weather[0].description;
