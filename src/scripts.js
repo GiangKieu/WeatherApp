@@ -8,7 +8,7 @@ function formatDate(timestamp){
         if (minutes < 10) {
             minutes = `0${minutes}`;
           }
-        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         let day = days[date.getDay()];
         return `${day} ${hours}:${minutes}`;    
 }
@@ -90,7 +90,7 @@ function displayForecast(response) {
         let forecastIcon = forecastDay.weather[0].icon;
         let forecastMinTemp = Math.round(forecastDay.temp.min);
         let forecastMaxTemp = Math.round(forecastDay.temp.max);
-        let forecastDate = formatForecastDate(forecastDay.dt)
+        let forecastDate = formatForecastDate(forecastDay.dt);
         forecastHTML = forecastHTML +
                 `<div class="col-2">
                     <div class="weather-forecast-date"> ${forecastDate}
