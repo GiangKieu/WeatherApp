@@ -8,9 +8,15 @@ function formatDate(timestamp){
         if (minutes < 10) {
             minutes = `0${minutes}`;
           }
-        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         let day = days[date.getDay()];
         return `${day} ${hours}:${minutes}`;    
+}
+function formatForecastDate(timestamp){
+        let date = new Date(timestamp *1000);
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        let day = days[date.getDay()];
+        return day;    
 }
 function getForecast(coordinates){
     console.log(coordinates);
@@ -28,6 +34,8 @@ function displayTemperature(response){
     let temperatureElement = document.querySelector("#currenttemperature");
     let cityElement = document.querySelector("#cityname");
     let descriptionElement = document.querySelector("#description");
+    let minTemperature = document.querySelector (".temp-min");
+    let maxTemperature = document.querySelector (".temp-max");
     let humidityElement = document.querySelector(".humidity");
     let windspeedElement = document.querySelector(".windspeed");
     let dateElement = document.querySelector("#time");
@@ -36,6 +44,8 @@ function displayTemperature(response){
     temperatureElement.innerHTML=Math.round(celsiusTemperature);
     cityElement.innerHTML= response.data.name;
     descriptionElement.innerHTML= response.data.weather[0].description;
+    minTemperature.innerHTML=Math.round(response.data.main.temp_min);
+    maxTemperature.innerHTML=Math.round(response.data.main.temp_max);
     humidityElement.innerHTML= response.data.main.humidity;
     windspeedElement.innerHTML= Math.round(response.data.wind.speed);
     dateElement.innerHTML=formatDate(response.data.dt*1000);
@@ -73,21 +83,25 @@ function displayCelsiusTemperature (event) {
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 function displayForecast(response) {
-    console.log(response.data.daily);
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector ("#forecast");
     let forecastHTML = `<div class="row">`;
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-    days.forEach(function(day){
+      forecast.forEach(function(forecastDay, index){if (index <6) {
+        let forecastIcon = forecastDay.weather[0].icon;
+        let forecastMinTemp = Math.round(forecastDay.temp.min);
+        let forecastMaxTemp = Math.round(forecastDay.temp.max);
+        let forecastDate = formatForecastDate(forecastDay.dt)
         forecastHTML = forecastHTML +
                 `<div class="col-2">
-                    <div class="weather-forecast-date"> ${day}
+                    <div class="weather-forecast-date"> ${forecastDate}
                     </div>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" id="icon" width="80"/>
+                    <img src= "http://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="" id="icon" width="80"/>
                     <div class="weather-forecast-temp">
-                    <span class= "min">12</span> 
-                    <span class="max">18</span>
+                    <span class= "min">${forecastMinTemp}°</span> 
+                    <span class="max">${forecastMaxTemp}°</span>
                     </div>
                 </div>`
+      }
     })
     forecastHTML= forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML; 

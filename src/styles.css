@@ -81,3 +81,7 @@ ul {
 .weather-forecast-temp .max {
    color: rgb(143, 196, 209)
 }
+.row {
+    text-align: center;
+    padding: 10px;
+}
