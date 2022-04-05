@@ -5,11 +5,10 @@
     padding: 20px;
     border: 1px solid rgb(143, 196, 209);
     border-radius: 20px;
-    width: 60%;
+    width: 500px;
 }
-
 #search {
-    padding: 4px;
+    padding: 5px 25px;
 }
 .submitcity {
     text-align: center;
