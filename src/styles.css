@@ -1,9 +1,14 @@
-
+:root {
+    --main-color:rgb(0, 174, 255);
+    --sub-color:rgb(143, 196, 209);
+    --main-font-size: 25px;
+    --sub-font-size:18px;
+}
 .container{
     display: block;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid rgb(143, 196, 209);
+    border: 1px solid var(--sub-color);
     border-radius: 20px;
     width: 500px;
 }
@@ -15,47 +20,47 @@
     margin: 40px;
 }
 .submitcity .active {
-    color:rgb(143, 196, 209);
+    color:var(--sub-color);
     cursor: default;
 }
 #cityname {
-    color: rgb(0, 174, 255);
-    font-size: 30px;
+    color: var(--main-color);
+    font-size: var(--main-font-size);
     font-weight: bolder;
     line-height: 20px;
 }
 #time{
-    color: rgb(143, 196, 209);
-    font-size: 20px;
+    color: var(--sub-color);
+    font-size: var(--sub-font-size);
     line-height: 30px;
 }
 #currenttemperature {
-    color: rgb(0, 174, 255);
-    font-size: 25px;
+    color: var(--main-color);
+    font-size: var(--main-font-size);
     line-height: 20px;
     text-decoration: none;
 }
 #description {
-    color: rgb(143, 196, 209)   ;
-    font-size: 20px;
+    color: var(--sub-color);
+    font-size: var(--sub-font-size);
     text-transform: capitalize;
 }
 span #celsius {
-    color: rgb(0, 174, 255);;
-    font-size: 25px;
+    color: var(--main-color);
+    font-size: var(--main-font-size);
     text-decoration: none;   
 }
 span #fahrenheit {
-    color: rgb(0, 174, 255);
-    font-size: 25px;
+    color: var(--main-color);
+    font-size: var(--main-font-size);
     text-decoration: none;
 }
 #more-info {
-    color: rgb(143, 196, 209); 
-    font-size: 20px;
+    color: var(--sub-color); 
+    font-size: var(--sub-font-size);
 }
 .info {
-    color: rgb(0, 174, 255);
+    color: var(--main-color);
 }
 .source {
     text-align: center;
@@ -67,21 +72,21 @@ span #fahrenheit {
 ul {
     list-style: none;
 }
-.weather-forcast {
+#forecast {
     text-align: center;
     margin-top: 10px;
 }
 .weather-forecast-date {
-    font-size: 16px;
-    color: rgb(0, 174, 255);
+    font-size: var(--sub-font-size);
+    color: var(--main-color);
 }
 .weather-forecast-temp .min {
-    color:rgb(0, 174, 255);
+    color:var(--main-color);
 }
 .weather-forecast-temp .max {
-   color: rgb(143, 196, 209)
+   color: var(--sub-color);
 }
 .row {
-    text-align: center;
-    padding: 10px;
+    display: flex;
+    justify-content: space-around;
 }
